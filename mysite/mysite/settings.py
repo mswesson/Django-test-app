@@ -18,7 +18,7 @@ from django.urls import reverse_lazy
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATABASE_DIR = BASE_DIR / 'database'
-# DATABASE_DIR.mkdir(exist_ok=True)
+DATABASE_DIR.mkdir(exist_ok=True)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -32,7 +32,7 @@ DEBUG = os.getenv("DEBUG_MODE", "0") == "1"
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "0.0.0.0",
-    os.getenv("ALLOWED_HOSTS", "").split(","),
+    *(os.getenv("ALLOWED_HOSTS", "").split(",")),
 ]
 
 INTERNAL_IPS = [
