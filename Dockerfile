@@ -11,3 +11,6 @@ COPY poetry.lock pyproject.toml ./
 RUN poetry install
 
 COPY mysite .
+
+RUN python3 manage.py migrate
+RUN python3 manage.py collectstatic --noinput
