@@ -6,10 +6,13 @@ __pycache__/
 # C extensions
 *.so
 
-mysite/mysite/stati
+# Default static files
+admin/
+debug_toolbar/
+rest_framework/
 
 # Databases
-database
+database/
 
 # Distribution / packaging
 .Python
